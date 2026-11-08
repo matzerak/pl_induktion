@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Vier interaktive Experimente zur elektromagnetischen Induktion – Magnetfeld, Fläche, Winkel und Windungszahl mit Beobachtungsaufgaben und Lückentexten."><title>Induktion · Das interaktive Physiklabor</title>
+<style>
+:root{--ink:#17312f;--muted:#5c6d6a;--green:#176958;--pale:#eaf3ee;--line:#d8e1dc;--paper:#f7f8f4;--copper:#b56232;--red:#a52e38;--blue:#267098;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,select{cursor:pointer}button{min-height:44px}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #d89524;outline-offset:4px}a{color:var(--green);text-underline-offset:3px}button{border:1px solid var(--line);border-radius:7px;padding:10px 15px;background:#fff;color:var(--ink);font-weight:600}button:hover{background:var(--pale)}button.primary{background:var(--green);border-color:var(--green);color:#fff}button.primary:hover{background:#104e41}.shell{max-width:1192px;margin:auto;padding:0 32px}.topbar{border-bottom:1px solid var(--line);background:#fff}.topbar .shell{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}.brand{display:flex;gap:11px;align-items:center;font-size:17px;font-weight:700;letter-spacing:-.4px}.brand svg{width:32px;height:32px}.brand span{font-weight:400;color:var(--muted);margin-left:6px}.tag{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700}.topnote{font-size:12px;color:var(--muted)}main{padding-bottom:40px}.intro{padding:42px 0 29px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px}.eyebrow{color:var(--green);margin:0 0 13px}h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:46px;letter-spacing:-1.8px;line-height:1.1;margin:0 0 14px}p{line-height:1.65}h2,h3,p{margin-top:0}.intro p{max-width:650px;color:var(--muted);font-size:15px;margin-bottom:0}.progressbox{min-width:160px;padding-bottom:5px}.progressbox p{font-size:12px;margin-bottom:9px}.progress-track{height:5px;border-radius:3px;background:#dce6df;overflow:hidden}.progress-track span{display:block;width:0;height:100%;background:var(--green);transition:width .2s}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--line);margin-bottom:30px}.tabs button{display:flex;align-items:center;gap:13px;border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;text-align:left;padding:16px 18px;color:var(--muted)}.tabs button[aria-selected=true]{border-bottom-color:var(--green);background:var(--pale);color:var(--green)}.tabnum{width:30px;height:30px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%;font-size:12px;flex-shrink:0}.tabtext small{display:block;font-size:11px;font-weight:400;margin-bottom:4px}.tabtext strong{font-size:14px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:10px}.sectionhead h2{font-size:23px;letter-spacing:-.5px;margin:0}.badge{background:var(--pale);border:1px solid var(--line);padding:6px 10px;border-radius:4px;font-size:11px;white-space:nowrap}.explain{font-size:14px;color:var(--muted);max-width:920px;margin-bottom:22px}.lab{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 286px}.scene{min-width:0;padding:20px 23px 10px;background:radial-gradient(#d8e2db .7px,transparent .7px) 0 0/19px 19px}.sceneheader{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:var(--muted)}.status{display:flex;gap:7px;align-items:center;color:var(--green)}.status:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green)}#apparatus{display:block;width:100%;height:auto;max-height:310px;margin:7px auto 0;overflow:visible}svg text{font-family:Arial,Helvetica,sans-serif;fill:var(--ink)}.legend{font-size:11px;display:flex;gap:19px;flex-wrap:wrap;margin-bottom:9px;color:var(--muted)}.legend span{display:flex;align-items:center;gap:7px}.legend i{width:18px;height:3px;background:var(--blue)}.legend i.copper{background:var(--copper)}.legend i.normal{background:var(--green)}.controls{padding:24px;border-left:1px solid var(--line)}.controls h3{font-size:14px;margin-bottom:22px}.control-label{display:block;font-size:13px;margin-bottom:10px}.control-value{display:flex;align-items:baseline;gap:5px;font-size:31px;font-variant-numeric:tabular-nums;margin-bottom:7px}.control-value small{font-size:13px;color:var(--muted)}input[type=range]{width:100%;accent-color:var(--green);height:32px;cursor:ew-resize;margin:0}.range-ends{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}.constants{display:flex;flex-direction:column;gap:8px;font-size:12px;margin:20px 0;color:var(--muted)}.constants span{display:flex;justify-content:space-between;gap:8px}.constants b{font-weight:400;color:var(--ink)}.runrow{display:flex;gap:8px}.runrow .primary{flex:1}#reset-experiment{padding:8px 12px;font-size:19px}.speedrow{display:flex;align-items:center;gap:8px;font-size:12px;margin-top:14px}.speedrow select{min-height:36px;border:1px solid var(--line);border-radius:5px;background:white;color:var(--ink);padding:4px;flex:1}.hint{font-size:11px;line-height:1.5;color:var(--muted);margin:12px 0 0}.measurement{grid-column:1/-1;border-top:1px solid var(--line);display:grid;grid-template-columns:180px minmax(0,1fr);padding:19px 23px;gap:25px;align-items:center}.measurement .tag{font-size:10px;color:var(--muted)}.reading{font-size:29px;font-variant-numeric:tabular-nums;letter-spacing:-1px;margin:9px 0 6px}.reading span{font-size:13px;letter-spacing:0;color:var(--muted)}.fluxread{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}.chartwrap{min-width:0}.charttop{font-size:10px;display:flex;justify-content:space-between;color:var(--muted)}#chart{width:100%;height:94px;display:block}#chart text{fill:var(--muted);font-size:10px}.modelnote{margin:11px 0 30px;font-size:11px;color:var(--muted)}.worksheet{display:grid;grid-template-columns:0.8fr 1.2fr;gap:42px;margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}.worksheet h3{font-size:19px;letter-spacing:-.3px;margin:10px 0 16px}.steps{list-style:none;counter-reset:steps;padding:0;margin:0}.steps li{counter-increment:steps;display:flex;gap:13px;line-height:1.6;font-size:13px;margin-bottom:15px}.steps li:before{content:counter(steps);display:grid;place-items:center;flex:0 0 23px;height:23px;font-size:11px;border:1px solid var(--line);border-radius:50%;margin-top:1px}.notelabel{font-size:12px;display:block;margin-top:18px;margin-bottom:8px}textarea{width:100%;resize:vertical;min-height:90px;background:#fff;border:1px solid var(--line);border-radius:7px;padding:12px;color:var(--ink);font-size:13px;line-height:1.5}.quiz{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}.quiz h3{margin-top:0}.quizintro{font-size:12px;color:var(--muted)}.cloze{font-size:14px;line-height:2.7}.cloze select{max-width:100%;border:0;border-bottom:2px solid #95b6a7;background:#edf4ef;color:var(--ink);padding:6px 7px;border-radius:4px 4px 0 0;min-height:39px;font-size:13px;margin:3px 2px}.cloze select.correct{background:#e4f3e8;border-color:#367849}.cloze select.incorrect{background:#fcebec;border-color:#b9434b}.quiz-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}.quiz-actions button{font-size:12px}.feedback{font-size:12px;line-height:1.6;margin:14px 0 0;min-height:20px;color:var(--green)}.feedback.error{color:var(--red)}.details.summary>.summary{display:none;grid-template-columns:1fr 1fr;gap:35px;padding:26px 30px;border-top:1px solid #b8cdbf}details.summary>summary{font-weight:700;cursor:pointer;padding:12px 18px;background:#e9f1eb;margin:0;color:var(--ink);user-select:none;font-size:inherit;list-style:none}details.summary[open]>.summary{display:grid}.summary h2{font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:400;margin:9px 0 10px}.summary p{font-size:13px;margin-bottom:0}details.summary>summary::marker{color:var(--muted)}.formula{border-left:1px solid #b8cdbf;padding-left:30px;display:flex;flex-direction:column;justify-content:center;gap:12px}.formula strong{font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:400}.formula small{font-size:11px;line-height:1.6;color:var(--muted)}summary{cursor:pointer;min-height:44px;padding-top:12px;color:var(--ink)}details{margin-top:17px;font-size:12px;color:var(--muted);line-height:1.7}details p{max-width:950px}footer{border-top:1px solid var(--line);padding:20px 0 30px;font-size:11px;color:var(--muted)}footer .shell{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-actions{display:flex;gap:15px;align-items:center}.textbutton{border:0;padding:0;min-height:30px;background:none;font-size:11px;text-decoration:underline;color:var(--muted);font-weight:400}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.skip{position:absolute;top:-60px;left:20px;background:white;padding:12px;z-index:5}.skip:focus{top:10px}[hidden]{display:none!important}
+@media(max-width:850px){.shell{padding:0 22px}.intro{padding-top:30px}h1{font-size:38px}.lab{grid-template-columns:minmax(0,1fr) 245px}.controls{padding:19px}.scene{padding:16px}.worksheet{gap:25px;grid-template-columns:.8fr 1.2fr}.quiz{padding:20px}.topnote{display:none}.tabs button{padding:13px 9px;gap:9px}.tabtext strong{font-size:12px}}
+@media(max-width:620px){.shell{padding:0 18px}.topbar .shell{min-height:65px}.brand{font-size:15px}.brand span{display:none}.intro{display:block;padding:27px 0 20px}h1{font-size:36px}.intro p{font-size:13px}.progressbox{margin-top:18px;max-width:200px}.tabs{margin-bottom:24px}.tabs button{display:block;padding:12px 5px}.tabnum{margin-bottom:9px;width:25px;height:25px}.tabtext small{font-size:10px}.tabtext strong{font-size:11px;line-height:1.4;display:block}.sectionhead{align-items:flex-start;gap:8px}.sectionhead h2{font-size:20px}.badge{font-size:9px;padding:5px}.explain{font-size:13px}.lab{grid-template-columns:1fr}.controls{border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;column-gap:22px;padding:19px}.controls h3{grid-column:1/-1;margin-bottom:14px}.control-main{grid-row:2/5}.constants{margin:0 0 14px;font-size:10px}.runrow{flex-wrap:wrap}.runrow button{font-size:12px;padding:8px}.runrow #reset-experiment{font-size:17px}.speedrow{margin-top:10px;flex-wrap:wrap}.hint{grid-column:1/-1;margin-top:15px}.measurement{padding:17px;grid-template-columns:1fr;gap:17px}.measure-values{display:flex;justify-content:space-between;align-items:center;gap:10px}.reading{margin:0;font-size:27px}.fluxread{margin-top:5px}.scene{padding:14px 12px 9px}.sceneheader{font-size:9px}.legend{font-size:9px;gap:12px}#apparatus{margin:8px auto;min-height:190px}.worksheet{grid-template-columns:1fr;gap:22px;margin-top:22px;padding-top:23px}.quiz{padding:19px}.summary{grid-template-columns:1fr;gap:22px;padding:22px}.formula{border-left:0;border-top:1px solid #b8cdbf;padding:20px 0 0}.modelnote{font-size:10px}.footer-actions{flex-wrap:wrap}.topbar .tag{font-size:9px;letter-spacing:.8px}}
+:root{--text-body:16px;--text-small:14px}
+.intro p,.explain,.steps li,.summary p,.cloze,textarea{font-size:var(--text-body)}
+.tag,.topnote,.progressbox p,.tabnum,.tabtext small,.tabtext strong,.sceneheader,.legend,.control-label,.control-value small,.range-ends,.constants,.speedrow,.hint,.measurement .tag,.reading span,.fluxread,.charttop,.modelnote,.steps li:before,.notelabel,.quizintro,.cloze select,.quiz-actions button,.feedback,.formula small,details,footer,.textbutton,.runrow button,.topbar .tag{font-size:var(--text-small)}
+.tag{letter-spacing:.8px}.topbar .tag{letter-spacing:.8px}
+.tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.tabtext{min-width:0;overflow-wrap:anywhere}.tabs button{min-width:0}
+@media(max-width:850px){.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.controls h3{font-size:18px;margin-bottom:10px}
+.hint{margin:0 0 22px;line-height:1.6}
+.sceneheader,.charttop{flex-wrap:wrap;row-gap:8px}
+.sceneheader .tag{font-size:var(--text-small)}
+.apparatus-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+.apparatus-scroll:focus-visible{outline:3px solid #d89524;outline-offset:-3px}
+#apparatus{min-width:640px;max-height:none}
+#apparatus text{font-size:16px}
+#apparatus .meter-scale,#apparatus .diagram-note{font-size:14px}
+#apparatus .meter-unit{font-size:18px;font-weight:700}
+.measurement{grid-template-columns:210px minmax(0,1fr)}
+#chart{height:110px}#chart text{font-size:var(--text-small)}
+.speedrow select,.cloze select,.textbutton{min-height:44px}
+@media(max-width:1000px){.lab{grid-template-columns:minmax(0,1fr)}.controls{border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px}.controls h3,.controls .hint{grid-column:1/-1}.control-main{grid-row:3/6}.constants{margin:0 0 14px}}
+@media(max-width:620px){.measurement{grid-template-columns:minmax(0,1fr)}.legend{gap:14px}.topbar .shell{flex-wrap:wrap;gap:6px;padding-top:12px;padding-bottom:12px}}
+@media(max-width:420px){.controls{display:block}.constants{margin:20px 0}.hint{margin-bottom:22px}.tabs button{padding-left:4px;padding-right:4px}.measure-values{flex-wrap:wrap}}
+details.summary{padding:0;background:transparent}
+details.summary>summary{display:list-item;list-style:disclosure-closed inside;font-weight:400;background:transparent;padding:12px 0 0;margin:0;user-select:auto}
+details.summary[open]>summary{list-style-type:disclosure-open}
+details.summary>summary::marker{color:var(--ink)}
+details.summary>.summary{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:35px;padding:20px 0 24px}
+@media(max-width:620px){details.summary>.summary{grid-template-columns:minmax(0,1fr);gap:22px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{body{background:white}.topbar,.tabs,.controls,.quiz-actions,.footer-actions,.progressbox,.modelnote,.summary>summary{display:none!important}.shell{max-width:none;padding:0}.intro{padding:10px 0}h1{font-size:30px}.lab{display:block;break-inside:avoid}.measurement{display:none}.scene{max-height:300px}.worksheet{display:block}.quiz{margin-top:18px;break-inside:avoid}details.summary .summary{display:block!important;background:white!important;border:1px solid #b8cdbf;border-radius:4px}.summary{break-inside:avoid}textarea{min-height:65px}p,.cloze,.steps li{font-size:12pt}.print-note{display:block!important}footer{font-size:10pt}.intro p{font-size:12pt}}
+@media print{.scene{max-height:none}.apparatus-scroll{overflow:visible}#apparatus{width:640px;min-width:0;max-width:100%;margin:0}}
+</style></head>
+<body>
+<a class="skip" href="#experiment">Zum Experiment</a>
+<header class="topbar"><div class="shell"><div class="brand"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#176958"/><path d="M7 18h4c-1-14 5-14 5 0s-6 14-5 0h7c-1-14 5-14 5 0s-6 14-5 0h11" stroke="white" stroke-width="1.5"/></svg>Physiklabor <span>/ Induktion</span></div><span class="tag">Entdecken. Verändern. Verstehen.</span></div></header>
+<main class="shell">
+<section class="intro"><div><h1>Elektromagnetische Induktion.</h1><p>Wann entsteht eine elektrische Spannung? Untersuche Magnetfeld, Spulenfläche und Winkel – und vergleiche Spulen mit unterschiedlicher Windungszahl.</p></div><div class="progressbox"><p id="progress-label">0 von 4 Versuchen gelöst</p><div class="progress-track" role="progressbar" aria-label="Gelöste Versuche" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><span id="progress-fill"></span></div></div></section>
+<nav class="tabs" role="tablist" aria-label="Grundversuche"><button id="tab-0" role="tab" aria-selected="true" aria-controls="experiment" tabindex="0" data-tab="0"><span class="tabnum">01</span><span class="tabtext"><small>Magnetfeld verändern</small><strong>Magnetische Flussdichte B</strong></span></button><button id="tab-1" role="tab" aria-selected="false" aria-controls="experiment" tabindex="-1" data-tab="1"><span class="tabnum">02</span><span class="tabtext"><small>Spule verformen</small><strong>Flächeninhalt A</strong></span></button><button id="tab-2" role="tab" aria-selected="false" aria-controls="experiment" tabindex="-1" data-tab="2"><span class="tabnum">03</span><span class="tabtext"><small>Spule drehen</small><strong>Winkel φ</strong></span></button><button id="tab-3" role="tab" aria-selected="false" aria-controls="experiment" tabindex="-1" data-tab="3"><span class="tabnum">04</span><span class="tabtext"><small>Windungszahl verändern</small><strong>Windungszahl N</strong></span></button></nav>
+<section id="experiment" role="tabpanel" aria-labelledby="tab-0" tabindex="0"><div class="sectionhead"><h2 id="experiment-title"></h2></div><p class="explain" id="explanation"></p>
+<div class="lab"><div class="scene"><div class="sceneheader"><span class="tag">Versuchsaufbau</span><span class="status" id="status">Bereit zum Experimentieren</span></div>
+<div class="apparatus-scroll" tabindex="0" role="region" aria-label="Versuchsaufbau; auf schmalen Bildschirmen seitlich verschiebbar"><svg id="apparatus" viewBox="0 0 640 300" role="img" aria-labelledby="apparatus-title apparatus-desc"><title id="apparatus-title">Induktionsspule im Magnetfeld mit Spannungsmesser</title><desc id="apparatus-desc">Blaue Pfeile zeigen das Magnetfeld der Feldspule. An der Feldspule ist kein Messgerät angeschlossen. Nur die kupferfarbene Induktionsspule ist mit dem Voltmeter V verbunden. Ihre Flächennormale ist grün eingezeichnet.</desc><defs><marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#267098"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#176958"/></marker></defs>
+<text x="62" y="24" font-size="12" font-weight="600">Feldspule</text><path d="M91 33L102 58" fill="none" stroke="#93a7a0"/>
+<g id="field-coil" fill="none" stroke="#b4cac4" stroke-width="2"></g><g id="field-lines" fill="none" stroke="#267098" stroke-width="1.7" marker-end="url(#arrow-blue)"></g>
+<text x="402" y="82" fill="#267098" font-size="13" font-style="italic">B</text>
+<g id="pickup" fill="none" stroke="#b56232" stroke-width="3.6"></g><path id="normal" d="M260 145L350 145" fill="none" stroke="#176958" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow-green)"/><text id="normal-label" x="352" y="138" font-size="12">n</text><path id="angle-arc" fill="none" stroke="#176958" stroke-width="1.3"/><text id="angle-label" x="308" y="124" font-size="11"></text>
+<path id="wire-left" fill="none" stroke="#9b6547" stroke-width="2"/><path id="wire-right" fill="none" stroke="#9b6547" stroke-width="2"/>
+<g id="voltmeter"><rect x="456" y="102" width="157" height="122" rx="10" fill="#fff" stroke="#acbcb4" stroke-width="1.5"/><path d="M478 178A60 60 0 0 1 590 178" fill="none" stroke="#d5dfd8" stroke-width="2"/><path d="M480 169L488 173M507 132L511 141M535 124L535 134M563 132L559 141M589 169L581 173" stroke="#839a8e"/><text x="474" y="195" class="meter-scale">−5</text><text x="531" y="119" class="meter-scale">0</text><text x="578" y="195" class="meter-scale">+5</text><path id="needle" d="M535 181L535 139" stroke="#176958" stroke-width="2.7" stroke-linecap="round"/><circle cx="535" cy="181" r="4" fill="#176958"/><text x="535" y="211" text-anchor="middle" class="meter-unit">V</text><circle cx="487" cy="224" r="4" fill="#9b6547"/><circle cx="581" cy="224" r="4" fill="#9b6547"/></g>
+<text x="173" y="267" font-weight="600">Induktionsspule</text><text id="turns-label" x="173" y="287" class="diagram-note" fill="#5c6d6a">N = 1 000 Windungen</text><text x="535" y="267" text-anchor="middle">Spannungsmesser</text></svg></div>
+<div class="legend"><span><i></i>Magnetfeld</span><span><i class="copper"></i>Induktionsspule</span><span><i class="normal"></i>Flächennormale n</span></div></div>
+<aside class="controls" aria-label="Versuch steuern"><h3>Jetzt bist du dran.</h3><p class="hint">Ziehe den Regler. Halte ihn zwischendurch still und beobachte die Spannung.</p><div class="control-main"><label class="control-label" id="variable-label" for="variable"></label><div class="control-value"><output id="variable-value" for="variable"></output><small id="variable-unit"></small></div><input type="range" id="variable" min="0" max="100" step="1" value="50"><div class="range-ends"><span id="range-min"></span><span id="range-max"></span></div></div><div class="constants" id="constants"></div><div class="runrow"><button class="primary" id="play" aria-pressed="false">▶ Automatisch</button><button id="reset-experiment" title="Versuch zurücksetzen" aria-label="Versuch zurücksetzen">↺</button></div><div class="speedrow"><label for="speed">Tempo</label><select id="speed"><option value="0.5">Langsam</option><option value="1" selected>Normal</option><option value="2">Schnell</option></select></div></aside>
+<div class="measurement"><div class="measure-values"><div><div class="tag">Induktionsspannung</div><div class="fluxread">Fluss Φ = <span id="flux">0,50</span> mWb</div></div><div class="reading"><output id="voltage" data-value="0">0,00</output> <span>V</span></div></div><div class="chartwrap"><div class="charttop"><span>Spannungsverlauf Uᵢ(t) · <span id="chart-scale">±1 V</span></span><span>Letzte 10 Sekunden</span></div><svg id="chart" viewBox="0 0 600 110" preserveAspectRatio="none" role="img" aria-label="Zeitverlauf der Induktionsspannung"><path id="chart-grid" d="M52 10H588M52 45H588M52 80H588" stroke="#e4eae5" stroke-dasharray="3 4"/><path id="chart-zero" d="M52 45H588" stroke="#b7c9be"/><text x="5" y="14" id="chart-max">+1</text><text x="16" y="49">0</text><text x="5" y="84" id="chart-min">−1</text><path id="trace" fill="none" stroke="#176958" stroke-width="2" vector-effect="non-scaling-stroke"/><text x="52" y="105">−10 s</text><text x="588" y="105" id="chart-now" text-anchor="end">jetzt</text></svg></div></div></div>
+<p class="modelnote">Idealisiertes Modell: homogenes Magnetfeld, konstante Anschlussrichtung. Versuche 1–3: 1 000 Windungen. Versuch 4: wählbare Windungszahl, während jeder Messung konstant. Der Zeiger zeigt maximal ±5 V; Digitalanzeige und Diagramm zeigen auch größere Werte.</p>
+<div class="worksheet"><section><div class="tag eyebrow">Erst ausprobieren</div><h3>Dein Forschungsauftrag</h3><ol class="steps" id="tasks"></ol><label class="notelabel" for="notes">Meine Beobachtungen <span class="topnote">· werden lokal gespeichert</span></label><textarea id="notes" placeholder="Was passiert beim Verändern? Was beim Stillhalten?"></textarea></section><section class="quiz" aria-labelledby="quiz-title"><h3 id="quiz-title">Beobachtung festhalten</h3><p class="quizintro">Vervollständige den Lückentext nach deinem Experiment.</p><div id="cloze" class="cloze"></div><div class="quiz-actions"><button id="check" class="primary">Antworten prüfen</button><button id="solution">Lösung ansehen</button><button id="retry" aria-label="Lückentext neu bearbeiten">Neu versuchen</button></div><p id="feedback" class="feedback" role="status" aria-live="polite"></p></section></div></section>
+<details class="summary"><summary>Zusammenfassung zum Thema Induktion</summary><div class="summary"><div><div class="tag">Das gemeinsame Prinzip</div><h2>Die Änderung macht den Unterschied.</h2><p>Ein Magnetfeld allein genügt nicht. Entscheidend ist, ob sich der magnetische Fluss durch die Spule mit der Zeit ändert. Feldstärke, Fläche und Ausrichtung bestimmen den Fluss pro Windung. Bei gleicher Flussänderung pro Zeit erzeugen mehr Windungen eine größere Spannung.</p></div><div class="formula"><strong>Φ = B · A · cos φ</strong><strong>Uᵢ = −N · ΔΦ / Δt</strong><small>φ ist der Winkel zwischen Magnetfeld und Flächennormale, nicht zwischen Magnetfeld und Spulenebene. Die zweite Formel beschreibt die mittlere Spannung im Zeitintervall Δt bei konstanter Windungszahl N während der Messung.</small></div></div></details>
+<details><summary>Was zeigt das Modell – und was nicht?</summary><p>Die Feldspule erzeugt das äußere Magnetfeld. Die davon elektrisch getrennte Induktionsspule ist an ein ideales, hochohmiges Voltmeter angeschlossen. Deshalb betrachten wir die Spannung, nicht einen merklichen Strom durch den Messkreis. Der Versuch ist eine idealisierte Simulation und kein Messprotokoll eines realen Geräts. Geometrie, Feldlinien und Windungszahl sind schematisch dargestellt; Streufelder, Widerstände und Selbstinduktion werden nicht modelliert.</p><p>Der Fluss Φ gilt für eine Windung. In den Versuchen 1–3 gilt N = 1 000; in Versuch 4 wählst du 100 bis 2 000 Windungen. Dort vergleichst du verschiedene Spulen bei gleicher Magnetfeldänderung pro Zeit. N bleibt während jeder Messung konstant. Ein Wechsel der Spule hält die Magnetfeldänderung an und erzeugt im Modell keine Spannungsspitze; reale Umschalt- oder Wickelvorgänge werden nicht simuliert.</p><p>Bei manuellen Änderungen von B, A oder φ wird ΔΦ über das Zeitintervall zwischen Eingaben berechnet; schnelle Sprünge können hohe kurze Spannungsspitzen ergeben. Die automatische Bewegung ermöglicht besser vergleichbare Versuche. Das Minuszeichen beschreibt die gewählte Polung gemäß der Lenz’schen Regel. Ein Vertauschen der Messleitungen würde alle Spannungszeichen umkehren.</p><p>Bei der Drehung ist der Fluss bei 0° maximal, bei 90° null und bei 180° negativ maximal. Gleichmäßiges Drehen erzeugt dennoch nicht überall die gleiche Spannung: Entscheidend ist die zeitliche Änderung von cos φ. Bei 90° ist der Fluss null, aber seine Änderungsrate beim Drehen besonders groß.</p></details>
+<p hidden class="print-note">Arbeitsblatt des aktuell ausgewählten Grundversuchs. Für weitere Versuche bitte den Reiter wechseln und erneut drucken.</p>
+</main><footer><div class="shell"><div>Eigenständige Lernanwendung · Fachliche Orientierung: <a href="https://www.leifiphysik.de/elektrizitaetslehre/elektromagnetische-induktion/versuche/drei-grundversuche-zur-elektromagnetischen-induktion-simulationen" target="_blank" rel="noopener noreferrer">LEIFIphysik ↗</a><br><span id="save-status">Ohne Anmeldung. Antworten bleiben in diesem Browser.<br>Matthias Krebs · Version 0.1.0 · 08.11.2026</span></div><div class="footer-actions"><button class="textbutton" id="print">Arbeitsblatt drucken</button><button class="textbutton" id="clear">Lernstand löschen</button></div></div></footer>
+<script id="physics">
+var Physics = Object.freeze({
+  flux({ B, A, angle }) {
+    return (B / 1000) * (A / 10000) * Math.cos(angle * Math.PI / 180);
+  },
+  voltage(previous, next, dt, turns = 1000) {
+    if (dt <= 0) return 0;
+    return -turns * (this.flux(next) - this.flux(previous)) / dt;
+  }
+});
+</script>
+<script id="application">
+'use strict';
+const $ = id => document.getElementById(id);
+const specs = [
+  { key:'B', label:'Magnetische Flussdichte B', unit:'mT', min:0, max:100, initial:50, rate:22,
+    title:'01 · Ein veränderliches Magnetfeld',
+    text:'Die Feldspule erzeugt ein Magnetfeld. In ihrem Inneren befindet sich eine zweite, elektrisch getrennte Spule mit einem Spannungsmesser. Verändere die Flussdichte B – also die Stärke des Magnetfelds. Fläche und Ausrichtung der Induktionsspule bleiben gleich.',
+    tasks:['Erhöhe B langsam und halte den Regler dann still. Vergleiche die Spannung während der Änderung und danach.','Verringere B wieder. Was fällt dir an der Richtung des Zeigerausschlags auf?','Nutze die automatische Bewegung erst langsam, dann schnell. Vergleiche die Beträge der Spannung.'] },
+  { key:'A', label:'Flächeninhalt A', unit:'cm²', min:20, max:200, initial:100, rate:44,
+    title:'02 · Eine veränderliche Spulenfläche',
+    text:'Das Magnetfeld bleibt unverändert. Diesmal verformst du die Induktionsspule: Die von jeder Windung umschlossene Fläche wird größer oder kleiner. Die Windungszahl und die Ausrichtung der Spule bleiben dabei gleich.',
+    tasks:['Vergrößere die Spulenfläche. Beobachte gleichzeitig den magnetischen Fluss und die Spannung.','Lass die große Spule unverändert stehen. Ist eine große Fläche allein ausreichend für eine Spannung?','Verkleinere die Fläche. Vergleiche anschließend langsame und schnelle automatische Änderungen.'] },
+  { key:'angle', label:'Winkel φ zur Flächennormale', unit:'°', min:0, max:180, initial:30, rate:40,
+    title:'03 · Eine drehbare Induktionsspule',
+    text:'Feldstärke und Spulenfläche sind jetzt konstant. Drehe die Induktionsspule im Magnetfeld. Der Winkel φ wird zwischen dem blauen Magnetfeld und der grünen Flächennormale n gemessen. Die Normale steht senkrecht auf der Spulenfläche.',
+    tasks:['Drehe die Spule von 0° über 90° bis 180°. Lies den Fluss Φ an diesen drei Positionen ab.','Halte die Spule bei einem beliebigen Winkel still. Was zeigt der Spannungsmesser dann?','Starte die automatische Drehung. Vergleiche die Spannung nahe 0° und nahe 90° – obwohl sich der Winkel gleichmäßig ändert.'] },
+  { key:'N', label:'Windungszahl N', unit:'Windungen', min:100, max:2000, step:100, initial:1000,
+    title:'04 · Die Windungszahl der Spule verändern',
+    text:'Vergleiche Induktionsspulen mit unterschiedlicher Windungszahl N. Der Regler wählt eine andere Spule aus; Fläche und Ausrichtung bleiben gleich. Mit „Magnetfeld starten“ ändert sich B gleichmäßig, während N konstant bleibt. Vergleiche die Spannung bei gleichem Tempo. Ein Spulenwechsel pausiert die Messung; das Auf- oder Abwickeln einer angeschlossenen Spule wird nicht simuliert.',
+    hint:'Wähle mit dem Regler die Windungszahl. Starte die Magnetfeldänderung und beobachte die Spannung. Vergleiche danach eine andere Windungszahl bei gleichem Tempo.',
+    tasks:['Wähle 500 Windungen und starte die Magnetfeldänderung mit normalem Tempo. Notiere den Betrag der Spannung.','Halte an und wähle 1 000 Windungen. Starte erneut mit demselben Tempo. Wie verändert sich der Spannungsbetrag? Vergleiche auch 2 000 Windungen.','Halte die Magnetfeldänderung an. Wähle verschiedene Windungszahlen. Reichen viele Windungen allein für eine Induktionsspannung aus?'] }
+];
+let active = 0, state = {B:50,A:100,angle:0,N:1000}, running = false, direction = 1, voltage = 0;
+let lastFrame = performance.now(), lastInput = 0, holdUntil = 0, history = [], lastSample = 0;
+const emptySave = () => ({ answers:specs.map(()=>[]), notes:specs.map(()=>''), solved:specs.map(()=>false), assisted:specs.map(()=>false) });
+let saved = emptySave();
+const STORAGE = 'induktion-lernstand-v1';
+const format = (value, digits=2) => (Math.abs(value)<Math.pow(10,-digits)/2 ? 0 : value).toLocaleString('de-DE',{minimumFractionDigits:digits,maximumFractionDigits:digits});
+const ns = 'http://www.w3.org/2000/svg';
+function svgElement(name, attrs) { const node=document.createElementNS(ns,name); for(const [key,value] of Object.entries(attrs)) node.setAttribute(key,value); return node; }
+for(let x=90;x<=390;x+=25) $('field-coil').append(svgElement('ellipse',{cx:x,cy:145,rx:27,ry:89}));
+function draw() {
+  const s=specs[active];
+  $('variable-value').textContent=format(state[s.key],0);
+  $('variable').value=state[s.key];
+  $('variable').setAttribute('aria-valuetext',format(state[s.key],0)+' '+s.unit);
+  $('flux').textContent=format(Physics.flux(state)*1000,3);
+  $('voltage').textContent=format(voltage);
+  $('voltage').dataset.value=Math.abs(voltage)<1e-10?'0':String(voltage);
+  $('needle').setAttribute('transform',`rotate(${Math.max(-65,Math.min(65,voltage*13))} 535 181)`);
+  $('status').textContent=running?(s.key==='N'?'Magnetfeld verändert sich':'Automatische Veränderung'):Math.abs(voltage)>1e-6?'Fluss verändert sich':'Keine Änderung · Uᵢ = 0';
+  const constants=[['B','Magnetfeld',format(state.B,0)+' mT'],['A','Fläche',format(state.A,0)+' cm²'],['angle','Winkel',format(state.angle,0)+'°']].filter(([key])=>key!==s.key);
+  if(s.key==='N')constants.push(['rate','|ΔB/Δt|',format(running?specs[0].rate*Number($('speed').value):0,0)+' mT/s']);
+  $('constants').replaceChildren(...constants.map(([key,label,value])=>{const span=document.createElement('span');span.append(document.createTextNode(label+(key==='rate'||(s.key==='N'&&key==='B')?'':' konstant')));const b=document.createElement('b');b.textContent=value;span.append(b);return span;}));
+  $('turns-label').textContent='N = '+format(state.N,0)+' Windungen';
+  const lines=$('field-lines'); lines.replaceChildren();
+  const count=Math.round(state.B/7);
+  for(let i=0;i<count;i++){ const y=65+(i+1)*160/(count+1); lines.append(svgElement('path',{d:`M61 ${y}H425`,opacity:Math.min(1,.35+state.B/130)})); }
+  const scale=Math.sqrt(state.A/100), cx=267,cy=145, rx=23*scale,ry=59*scale;
+  const angle=state.angle*Math.PI/180;
+  const visibleTurns=s.key==='N'?Math.max(1,Math.round(state.N/200)):3;
+  const offsets=Array.from({length:visibleTurns},(_,i)=>(i-(visibleTurns-1)/2)*6);
+  $('pickup').replaceChildren(...offsets.map(dx=>svgElement('ellipse',{cx:cx+dx,cy,rx,ry})));
+  $('pickup').setAttribute('transform',`rotate(${-state.angle} ${cx} ${cy})`);
+  const nx=cx+92*Math.cos(angle),ny=cy-92*Math.sin(angle);
+  $('normal').setAttribute('d',`M${cx} ${cy}L${nx} ${ny}`);
+  $('normal-label').setAttribute('x',nx+5);$('normal-label').setAttribute('y',ny-5);
+  $('angle-arc').setAttribute('d',state.angle>0?`M${cx+37} ${cy}A37 37 0 0 0 ${cx+37*Math.cos(angle)} ${cy-37*Math.sin(angle)}`:'');
+  $('angle-label').textContent=active===2?'φ = '+format(state.angle,0)+'°':'';
+  $('angle-label').setAttribute('x',cx+50*Math.cos(angle/2));$('angle-label').setAttribute('y',cy-50*Math.sin(angle/2)-4);
+  const wirePoint=(dx)=>[cx+dx*Math.cos(angle)+ry*Math.sin(angle),cy-dx*Math.sin(angle)+ry*Math.cos(angle)];
+  const [x1,y1]=wirePoint(offsets[0]),[x2,y2]=wirePoint(offsets[offsets.length-1]);
+  $('wire-left').setAttribute('d',`M${x1} ${y1}V237H487V224`);
+  $('wire-right').setAttribute('d',`M${x2} ${y2}V243H581V224`);
+}
+function drawChart(now) {
+  history=history.filter(point=>now-point.t<=10000);
+  const max=Math.max(1,...history.map(point=>Math.abs(point.v)));
+  const scale=Math.pow(10,Math.floor(Math.log10(max)))*Math.ceil(max/Math.pow(10,Math.floor(Math.log10(max))));
+  $('chart-max').textContent='+'+format(scale,0);$('chart-min').textContent='−'+format(scale,0);$('chart-scale').textContent='±'+format(scale,0)+' V';
+  const width=$('chart').clientWidth,left=52,right=width-12;
+  $('chart').setAttribute('viewBox',`0 0 ${width} 110`);
+  $('chart-grid').setAttribute('d',`M${left} 10H${right}M${left} 45H${right}M${left} 80H${right}`);
+  $('chart-zero').setAttribute('d',`M${left} 45H${right}`);
+  $('chart-now').setAttribute('x',right);
+  $('trace').setAttribute('d',history.map((point,i)=>`${i?'L':'M'}${left+(right-left)*(1-(now-point.t)/10000)},${45-point.v/scale*34}`).join(' '));
+}
+function setRunning(next) {
+  running=next;lastFrame=performance.now();lastInput=0;
+  $('play').textContent=running?'Ⅱ Anhalten':specs[active].key==='N'?'▶ Magnetfeld starten':'▶ Automatisch';$('play').setAttribute('aria-pressed',String(running));
+  if(!running){voltage=0;holdUntil=0;draw();}
+}
+function resetExperiment() {
+  setRunning(false);state={B:50,A:100,angle:0,N:1000};state[specs[active].key]=specs[active].initial;
+  direction=1;history=[];voltage=0;lastInput=0;$('speed').value='1';draw();drawChart(performance.now());
+}
+function changeTab(index, focus=false) {
+  active=index;
+  document.querySelectorAll('[role=tab]').forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1;});
+  $('experiment').setAttribute('aria-labelledby','tab-'+index);
+  const s=specs[index];$('experiment-title').textContent=s.title;$('explanation').textContent=s.text;
+  $('variable-label').textContent=s.label;$('variable-unit').textContent=s.unit;
+  Object.assign($('variable'),{min:s.min,max:s.max,step:s.step||1});$('variable').dataset.variable=s.key;
+  document.querySelector('.hint').textContent=s.hint||'Ziehe den Regler. Halte ihn zwischendurch still und beobachte die Spannung.';
+  $('range-min').textContent=s.min+' '+s.unit;$('range-max').textContent=s.max+' '+s.unit;
+  $('tasks').replaceChildren(...s.tasks.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+  $('notes').value=saved.notes[index];resetExperiment();
+  renderQuiz();
+  if(focus)$('tab-'+index).focus();
+}
+function tick(now) {
+  const dt=Math.min((now-lastFrame)/1000,.05);lastFrame=now;
+  if(running && dt>0){const s=specs[active].key==='N'?specs[0]:specs[active],previous={...state};let next=state[s.key]+direction*s.rate*Number($('speed').value)*dt;if(next>=s.max){next=s.max;direction=-1;}if(next<=s.min){next=s.min;direction=1;}state[s.key]=next;voltage=Physics.voltage(previous,state,dt,state.N);draw();}
+  else if(!running && now>holdUntil && voltage!==0){voltage=0;draw();}
+  if(now-lastSample>=40){history.push({t:now,v:voltage});lastSample=now;drawChart(now);}
+  requestAnimationFrame(tick);
+}
+$('variable').addEventListener('input',()=>{
+  const selected=Number($('variable').value);
+  if(running)setRunning(false);
+  const now=performance.now(),previous={...state};state[specs[active].key]=selected;
+  const dt=lastInput && now-lastInput<250?Math.max(.016,(now-lastInput)/1000):.1;
+  voltage=Physics.voltage(previous,state,dt,state.N);lastInput=now;holdUntil=now+100;history.push({t:now,v:voltage});draw();drawChart(now);
+});
+$('play').addEventListener('click',()=>setRunning(!running));$('reset-experiment').addEventListener('click',resetExperiment);
+document.querySelectorAll('[role=tab]').forEach((tab,index)=>{tab.addEventListener('click',()=>changeTab(index));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%specs.length;else if(event.key==='ArrowLeft')next=(index+specs.length-1)%specs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=specs.length-1;else return;event.preventDefault();changeTab(next,true);});});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)setRunning(false);});
+$('print').addEventListener('click',()=>{setRunning(false);window.print();});
+const quizzes = [
+  {parts:['Eine Induktionsspannung entsteht, solange sich das Magnetfeld ','. Bleibt das Magnetfeld konstant, ist die Spannung ','. Beim Verringern des Feldes hat die Spannung die ', ' Polung wie beim Vergrößern. Je schneller sich B ändert, desto ', ' ist der Betrag der Spannung.'], choices:[['nicht verändert','verändert'],['maximal','null','immer positiv'],['gleiche','umgekehrte'],['kleiner','größer','konstanter']], correct:['verändert','null','umgekehrte','größer'], why:'Eine Änderung von B verändert den Fluss. Bei konstantem B bleibt der Fluss gleich: Es entsteht keine Induktionsspannung.'},
+  {parts:['Wird die Spulenfläche verändert, ändert sich auch der ','. Bei unveränderter Fläche entsteht in diesem Versuch ', ' Induktionsspannung. Vergrößern und Verkleinern ergeben bei gleicher Anschlussrichtung eine ', ' Polung. Bei schnellerer Flächenänderung ist der Betrag der Spannung ', '.'], choices:[['elektrische Widerstand','magnetische Fluss','Winkel'],['eine maximale','keine','eine dauerhafte'],['gleiche','umgekehrte'],['kleiner','unverändert','größer']],correct:['magnetische Fluss','keine','umgekehrte','größer'],why:'Nicht die Größe der Fläche allein ist entscheidend, sondern ihre Änderung: Bei konstantem B und Winkel gilt ΔΦ = B · ΔA.'},
+  {parts:['Der Winkel φ liegt zwischen Magnetfeld und ','. Bei φ = 90° ist der magnetische Fluss ','. Bei gleichmäßiger Drehung ist der Betrag der Spannung nahe 90° am ','. Hält man die Spule still, entsteht ', ' Induktionsspannung.'],choices:[['Spulenebene','Flächennormale','Messleitung'],['maximal positiv','null','maximal negativ'],['kleinsten','größten'],['eine dauerhafte','keine','eine maximale']],correct:['Flächennormale','null','größten','keine'],why:'Null Fluss bedeutet nicht automatisch null Spannung. Beim Drehen durch 90° ändert sich der Fluss besonders schnell. Im Stillstand hingegen ändert er sich überhaupt nicht.'},
+  {parts:['Bei gleicher Magnetfeldänderung pro Zeit führt eine größere Windungszahl zu einer ', ' Induktionsspannung. Verdoppelt man N, ist der Spannungsbetrag ', ' so groß. Für einen fairen Vergleich muss die Änderungsrate des Magnetfelds ', ' bleiben. Bei zeitlich konstantem Magnetfeld entsteht in den ruhenden Spulen trotz vieler Windungen ', ' Induktionsspannung.'],choices:[['kleineren','größeren'],['halb','doppelt','viermal'],['gleich','größer','kleiner'],['eine dauerhafte','keine','eine maximale']],correct:['größeren','doppelt','gleich','keine'],why:'Bei gleicher Fläche, Ausrichtung und Magnetfeldänderung pro Zeit gilt: Der Spannungsbetrag ist proportional zu N. Ohne Flussänderung pro Windung entsteht in den ruhenden Spulen keine Induktionsspannung.'}
+];
+function persist() {
+  try { localStorage.setItem(STORAGE,JSON.stringify(saved)); }
+  catch { $('save-status').textContent='Speichern ist hier nicht verfügbar. Dein Lernstand bleibt nur bis zum Neuladen erhalten.'; }
+}
+function restore() {
+  try {
+    const raw=JSON.parse(localStorage.getItem(STORAGE));
+    if(!raw || typeof raw!=='object')return;
+    for(let i=0;i<specs.length;i++){
+      saved.answers[i]=quizzes[i].choices.map((choices,j)=>choices.includes(raw.answers?.[i]?.[j])?raw.answers[i][j]:'');
+      saved.notes[i]=typeof raw.notes?.[i]==='string'?raw.notes[i].slice(0,20000):'';
+      saved.assisted[i]=raw.assisted?.[i]===true;
+      saved.solved[i]=raw.solved?.[i]===true && !saved.assisted[i] && quizzes[i].correct.every((answer,j)=>saved.answers[i][j]===answer);
+    }
+  } catch { $('save-status').textContent='Ein gespeicherter Lernstand konnte nicht geladen werden. Du kannst neu beginnen.'; }
+}
+function updateProgress() {
+  const count=saved.solved.filter(Boolean).length;
+  $('progress-label').textContent=count+' von '+specs.length+' Versuchen gelöst';
+  $('progress-fill').style.width=(count/specs.length*100)+'%';
+  document.querySelector('[role=progressbar]').setAttribute('aria-valuemax',String(specs.length));
+  document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',String(count));
+  document.querySelectorAll('.tabnum').forEach((node,i)=>{node.textContent=saved.solved[i]?'✓':'0'+(i+1);});
+}
+function renderQuiz() {
+  const q=quizzes[active],container=$('cloze');container.replaceChildren();
+  q.parts.forEach((part,i)=>{
+    container.append(document.createTextNode(part));
+    if(i===q.choices.length)return;
+    const select=document.createElement('select');select.setAttribute('aria-label','Lücke '+(i+1)+': '+part.trim());
+    select.append(new Option('Bitte wählen …',''));
+    q.choices[i].forEach(choice=>select.append(new Option(choice,choice)));
+    select.value=saved.answers[active][i]||'';
+    select.addEventListener('change',()=>{saved.answers[active][i]=select.value;saved.solved[active]=false;select.className='';select.removeAttribute('aria-invalid');$('feedback').textContent='';updateProgress();persist();});
+    container.append(select);
+  });
+  $('feedback').className='feedback';
+  $('feedback').textContent=saved.solved[active]?'Diesen Versuch hast du selbstständig gelöst.':saved.assisted[active]?'Lösung angesehen. Mit „Neu versuchen“ kannst du dich selbst testen.':'';
+}
+function checkQuiz() {
+  const q=quizzes[active],selects=[...$('cloze').querySelectorAll('select')];
+  const missing=selects.filter(select=>!select.value).length;
+  $('feedback').className='feedback';
+  if(missing){$('feedback').textContent=`Bitte fülle noch ${missing} ${missing===1?'Lücke':'Lücken'} aus.`;$('feedback').classList.add('error');selects.find(select=>!select.value).focus();return;}
+  if(saved.assisted[active]){$('feedback').textContent='Die Lösung wurde angezeigt und zählt nicht als selbst gelöst. Wähle „Neu versuchen“, um dich selbst zu testen.';return;}
+  let correct=0;
+  selects.forEach((select,i)=>{const good=select.value===q.correct[i];if(good)correct++;select.className=good?'correct':'incorrect';select.setAttribute('aria-invalid',String(!good));});
+  saved.solved[active]=correct===q.correct.length;
+  $('feedback').textContent=correct===q.correct.length?`${correct} von ${q.correct.length} Antworten richtig. ${q.why}`:`${correct} von ${q.correct.length} Antworten richtig. Überprüfe die rot markierten Lücken. ${q.why}`;
+  if(!saved.solved[active])$('feedback').classList.add('error');
+  updateProgress();persist();
+}
+$('check').addEventListener('click',checkQuiz);
+$('solution').addEventListener('click',()=>{saved.answers[active]=[...quizzes[active].correct];saved.assisted[active]=true;saved.solved[active]=false;renderQuiz();$('feedback').textContent='Lösung angezeigt. '+quizzes[active].why+' Mit „Neu versuchen“ kannst du dich selbst testen.';updateProgress();persist();});
+$('retry').addEventListener('click',()=>{saved.answers[active]=[];saved.solved[active]=false;saved.assisted[active]=false;renderQuiz();updateProgress();persist();$('cloze').querySelector('select').focus();});
+$('notes').maxLength=20000;
+$('notes').addEventListener('input',()=>{saved.notes[active]=$('notes').value;persist();});
+$('clear').addEventListener('click',()=>{if(!window.confirm('Alle gespeicherten Antworten, Notizen und gelösten Versuche löschen?'))return;saved=emptySave();persist();updateProgress();changeTab(0);});
+restore();changeTab(0);updateProgress();requestAnimationFrame(tick);
+</script>
+</body>
+</html>
