@@ -2,6 +2,12 @@
 
 Webanwendung zu vier Grundversuchen der elektromagnetischen Induktion.
 
+
+
+![induktion01](./induktion01.jpeg)
+
+
+
 ## Inhalte
 
 Die Webanwendung bietet vier Grundversuche zum Thema elektromagnetische Induktion:
